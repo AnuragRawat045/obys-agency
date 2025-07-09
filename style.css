@@ -1,0 +1,85 @@
+*{
+    padding: 0;
+    margin: 0;
+    color: white;
+}
+html ,body{
+    height:100%;
+    width: 100%;
+    box-sizing: border-box;
+}
+#loader{
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    z-index:999 ;
+    background-color: #0B0B0B;
+    padding: 20vh 10vw;
+}
+.line{
+    height: fit-content;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 3vw;
+}
+#linepart1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap:2vw;
+}
+#linepart1 h5,#linepart1 h6{
+    font-size: 4vw;
+}
+.line h1 {
+    font-size: 6vw;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+.line h2{
+    font-size: 6.2vw;
+    text-transform: uppercase;
+    font-weight: 500;
+    opacity: 0;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    
+}
+@keyframes anime {
+    0%{
+        -webkit-text-stroke:1px #fff;
+        color: #fff;
+        font-weight: 500;
+        opacity: 1;
+    }
+    
+    48%{
+        -webkit-text-stroke:1px #fff;
+        color: #fff;
+        font-weight: 500;
+        opacity: 0;
+    }
+    50%{
+        -webkit-text-stroke:1px #fff;
+        color: transparent;
+        font-weight: 500;
+        opacity: 1;
+    }
+    100%{
+        -webkit-text-stroke:1px #fff;
+        color: transparent;
+        font-weight: 500;
+        opacity: 0;
+    }
+}
+#main{
+    position: relative;
+
+}
+#page1{
+    height: 100vh;
+    width: 100%;
+    background-color: #151515;
+}
