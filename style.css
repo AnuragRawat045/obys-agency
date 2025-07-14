@@ -110,6 +110,7 @@ html ,body{
     align-items: center;
     justify-content: space-between;
     padding: 2.3vw 5vw;
+    position: relative;
 }
  #navpart2{
     display: flex;
@@ -125,13 +126,25 @@ html ,body{
     width: 72%;
     margin-left: 28%;
     height: fit-content;
-    overflow: hidden;
+  overflow-y: hidden;
+  display: flex;
+  align-items: center;
+  
+  
 }
 .hero h1{
     font-size: 7.2vw;
     font-weight: 600;
     text-transform: uppercase;
     line-height: 7vw;
+    position: relative;
+}
+#hero1::before{
+    content: "01";
+    position: absolute;
+    font-size: 3vw;
+    top: 18%;
+    left: 19%;
 }
 .hero:nth-child(2){
     margin-top: 18vh;
@@ -221,7 +234,15 @@ html ,body{
 #page4content h1{
     font-size: 7vw;
     text-transform: uppercase;
+    position: relative;
     
+}
+#page4content h1::before{
+     content: "04";
+    position: absolute;
+    font-size: 3vw;
+    left: -20%;   
+    top: 0;
 }
 #page4content .underline{
     height: 2px;
@@ -274,6 +295,94 @@ html ,body{
 #page5{
     min-height: 100vh;
     width: 100%;
-    padding: 5vw 0;
+   position: relative;
+}
+.elem{
+     white-space: nowrap;
+     overflow-x: hidden;
+     margin-bottom: 1vw;
+}
+.elem h1{
+    font-size: 7vw;
+    -webkit-text-stroke: 1px #fff;
+    color: transparent;
+    font-weight: 400;
+    text-transform: uppercase;
+    display: inline-block;
+    margin-right: 16px;
+    animation-name: flow;
+    animation-iteration-count: infinite;
+    animation-duration: 10s;
+    animation-timing-function: linear;
+}
+.elem2{
+     white-space: nowrap;
+     overflow-x: hidden;
+     margin-bottom: 1vw;
+}
+.elem2 h1{
+    font-size: 7vw;
+    -webkit-text-stroke: 1px #fff;
+    color: transparent;
+    font-weight: 400;
+    text-transform: uppercase;
+    display: inline-block;
+    margin-right: 16px;
+    animation-name: flow;
+    animation-iteration-count: infinite;
+    animation-duration: 10s;
+    animation-timing-function: linear;
+    animation-direction: reverse;
+}
+@keyframes flow {
+    from{
+        transform:translateX(0%);
+    }
+    to{
+        transform: translateX(calc(-100% - 20px));
+    }
+}
+#footer{
+    height: 80vh;
+    max-width: 100%;
+    position: relative;
+    padding-left: 28vw;
 }
 
+#footer h1{
+    font-size: 8vw;
+    text-transform: uppercase;
+    position: relative;
+}
+#footer h1::before {
+     content: "05";
+    position: absolute;
+    font-size: 3vw;
+    left: -15%;   
+    top: 0;
+}
+.underline{
+    height: 2px;
+    width: 100%;
+    background-color: #fff;
+    
+}
+#footer-div{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 15vw;
+    padding-top: 4vw;
+    margin-bottom: 3vw;
+}
+#footer-div h6{
+    font-size: 1.2vw;
+    margin-bottom: 2vw;
+}
+.box{
+    width: 20%;
+}
+#footer-div h5{
+    font-size: 1.2vw;
+    margin: o.2vh 0;
+}
