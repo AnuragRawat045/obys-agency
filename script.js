@@ -37,7 +37,7 @@ tl.from(".line h4",{
     stagger:0.4,
     opacity:0,
     duration:0.6,
-    delay:0.5
+    delay:0.4
 })
 tl.from("#linepart1 ",{
     opacity:0,
@@ -51,7 +51,7 @@ tl.from("#linepart1 ",{
         else{
          time.innerHTML=grow;
         }
-        },35)
+        },27)
     }
 })
 tl.to(".line h2",{
@@ -92,8 +92,84 @@ document.addEventListener("mousemove",function(dets){
         top: dets.clientY})
 })
 Shery.makeMagnet("#navpart2 h4");
+var v= document.querySelector("#vidocontainer");
+var video=document.querySelector("#vidocontainer video");
+
+v.addEventListener("mouseenter",function(){
+    v.addEventListener("mousemove",function(dets){
+        gsap.to("#cursr",{
+            opacity:0
+        })
+        gsap.to("#videocrsr",{
+            left:dets.clientX - 570,
+            top:dets.clientY - 300
+        })
+})
+
+})
+v.addEventListener("mouseleave",function(){
+gsap.to("#cursr",{
+    display:"initial"
+});
+gsap.to("#videocrsr",{
+    left:"70%",
+    top:"-15%"
+});
+})
+var flag=0;
+video.addEventListener("click",function(){
+    if(flag==0){
+        video.play();
+    video.style.opacity=1
+    document.querySelector("#videocrsr").innerHTML='<i class="ri-pause-mini-line"></i>'
+    gsap.to("#videocrsr",function(){
+        scale:0.5
+    })
+    flag=1;
+    }
+    else{
+        video.pause();
+    video.style.opacity=0
+    document.querySelector("#videocrsr").innerHTML=' <i class="ri-play-line"></i>'
+    gsap.to("#videocrsr",function(){
+        scale:1
+    })
+    flag=0
+    }
+})
 
 }
+function sheryAnimation(){
+   Shery.imageEffect(".img-div",{
+    style:5,
+   
+    config:{"a":{"value":1.6,"range":[0,30]},"b":{"value":-0.6,"range":[-1,1]},"zindex":{"value":-9996999,"range":[-9999999,9999999]},"aspect":{"value":0.7272749932567818},"ignoreShapeAspect":{"value":true},"shapePosition":{"value":{"x":0,"y":0}},"shapeScale":{"value":{"x":0.5,"y":0.5}},"shapeEdgeSoftness":{"value":0,"range":[0,0.5]},"shapeRadius":{"value":0,"range":[0,2]},"currentScroll":{"value":0},"scrollLerp":{"value":0.07},"gooey":{"value":true},"infiniteGooey":{"value":false},"growSize":{"value":4,"range":[1,15]},"durationOut":{"value":1,"range":[0.1,5]},"durationIn":{"value":1.5,"range":[0.1,5]},"displaceAmount":{"value":0.5},"masker":{"value":true},"maskVal":{"value":2.04,"range":[1,5]},"scrollType":{"value":0},"geoVertex":{"range":[1,64],"value":1},"noEffectGooey":{"value":true},"onMouse":{"value":0},"noise_speed":{"value":3.97,"range":[0,10]},"metaball":{"value":0.43,"range":[0,2]},"discard_threshold":{"value":0.5,"range":[0,1]},"antialias_threshold":{"value":0,"range":[0,0.1]},"noise_height":{"value":0.43,"range":[0,2]},"noise_scale":{"value":16.79,"range":[0,100]}},
+    gooey:true
+   })
+}
+
+
+
+
 locomotiveAnimation();
 loadingAnimation();
 cursorAnimation();
+sheryAnimation();
+
+
+document.addEventListener("mousemove",function(dets){
+    gsap.to("#flag",{
+        x:dets.clientX,
+        y:dets.clientY
+    })
+})
+document.querySelector("#hero3").addEventListener("mouseenter",function(){
+    gsap.to("#flag",{
+        opacity:1
+    })
+})
+document.querySelector("#hero3").addEventListener("mouseleave",function(){
+    gsap.to("#flag",{
+        opacity:0
+    })
+})
